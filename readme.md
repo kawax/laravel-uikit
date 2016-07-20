@@ -4,6 +4,8 @@ http://getuikit.com/
 
 後で使うかもしれないのでデフォルトのviewをUIkit使用に書き換えたものを残しておく。
 
+![uikit.png](uikit.png)
+
 ## 環境
 - Laravel 5.3
 - UIkit 2.26.*
