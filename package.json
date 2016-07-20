@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "scripts": {
+    "prod": "gulp --production",
+    "dev": "gulp watch",
+    "ide-helper:meta": "php artisan ide-helper:meta",
+    "ide-helper:generate": "php artisan ide-helper:generate",
+    "ide-helper:models": "php artisan ide-helper:models -N"
+  },
+  "devDependencies": {
+    "font-awesome": "^4.6.3",
+    "gulp": "^3.9.1",
+    "jquery": "^3.1.0",
+    "laravel-elixir": "^6.0.0-9",
+    "laravel-elixir-webpack-official": "^1.0.2",
+    "uikit": "^2.26.4"
+  }
+}
