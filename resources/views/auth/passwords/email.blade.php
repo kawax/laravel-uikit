@@ -2,7 +2,7 @@
 
 <!-- Main Content -->
 @section('content')
-  <div class="uk-container uk-container-center uk-width-1-2">
+  <div class="uk-container uk-container-center uk-width-large1-2">
     <div class="uk-panel uk-panel-box uk-panel-header">
       <h3 class="uk-panel-title">Reset Password</h3>
 
