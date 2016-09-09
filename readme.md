@@ -29,7 +29,7 @@ uikitとfont-awesome追加。jqueryも必要。
     "font-awesome": "^4.6.3",
     "gulp": "^3.9.1",
     "jquery": "^3.1.0",
-    "laravel-elixir": "^6.0.0-9",
+    "laravel-elixir": "^6.0.0-10",
     "laravel-elixir-webpack-official": "^1.0.2",
     "uikit": "^2.26.4"
   }
@@ -79,11 +79,10 @@ elixir(function (mix) {
 ```
 
 ### Pagination
-Laravelデフォルトはbootstrap使用なのでUIkitに合わせるには`resources/views/pagination/`と`app/Provider/UIKitServiceProvider.php`をコピー後、`config/app.php`のprovidersに
-```php
-App\Providers\UIKitServiceProvider::class,
 ```
-を追加。  
-もしくは同じ処理をAppServiceProviderに書く。
+php artisan vendor:publish --tag=laravel-pagination
+```
+
+で作られた`resources/views/vendor/pagination/default.blade.php`に`uikit.blade.php`の中身をコピペ。
 
 これが使えるのはLaravel 5.3以降。
