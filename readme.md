@@ -7,8 +7,8 @@ http://getuikit.com/
 ![uikit.png](uikit.png)
 
 ## 環境
-- Laravel 5.3
-- UIkit 2.26.*
+- Laravel 5.4
+- UIkit 2.27.*
 
 ## 使い方
 `php artisan make:auth`で作られたviewファイルを入れ替え。好きなように書き換える。
@@ -19,63 +19,66 @@ uikitとfont-awesome追加。jqueryも必要。
 {
   "private": true,
   "scripts": {
-    "prod": "gulp --production",
-    "dev": "gulp watch",
-    "ide-helper:meta": "php artisan ide-helper:meta",
-    "ide-helper:generate": "php artisan ide-helper:generate",
-    "ide-helper:models": "php artisan ide-helper:models -N"
+    "webpack": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+       "dev": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+       "hmr": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+       "production": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {
-    "font-awesome": "^4.6.3",
-    "gulp": "^3.9.1",
+    "axios": "^0.15.2",
     "jquery": "^3.1.0",
-    "laravel-elixir": "^6.0.0-10",
-    "laravel-elixir-webpack-official": "^1.0.2",
-    "uikit": "^2.26.4"
+    "laravel-mix": "^0.5.0",
+    "lodash": "^4.16.2",
+    "uikit": "^2.27.2",
+    "font-awesome": "^4.7.0"
   }
 }
 ```
 
-### gulpfile.js
+### webpack.mix.js
 テーマを変えるなら使用するcssを変える。
+追加のcomponentを使うならcombine辺りで追加。
+
 ```javascript
-var elixir = require('laravel-elixir');
+const {mix} = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
- | Elixir Asset Management
+ | Mix Asset Management
  |--------------------------------------------------------------------------
  |
- | Elixir provides a clean, fluent API for defining some basic Gulp tasks
+ | Mix provides a clean, fluent API for defining some Webpack build steps
  | for your Laravel application. By default, we are compiling the Sass
- | file for our application, as well as publishing vendor resources.
+ | file for the application as well as bundling up all the JS files.
  |
  */
 
 // uikit themes
 // var uikit = 'uikit.min.css';
 // var uikit = 'uikit.almost-flat.min.css';
-var uikit = 'uikit.gradient.min.css';
+const uikit = 'uikit.gradient.min.css';
 
-elixir(function (mix) {
-  mix.sass('app.scss')
-    .webpack('app.js')
-    .copy('node_modules/uikit/dist/css/' + uikit, 'public/css/uikit.min.css')
-    .copy('node_modules/uikit/dist/js/uikit.min.js', 'public/js/')
-    .copy('node_modules/jquery/dist/jquery.min.js', 'public/js/')
-    .copy('node_modules/font-awesome/fonts/', 'public/fonts')
-    .version([
-      'css/app.css',
-      'js/app.js'
-    ]);
-});
+mix.js('resources/assets/js/app.js', 'public/js')
+  .sass('resources/assets/sass/app.scss', 'public/css')
+  .combine([
+    'node_modules/uikit/dist/css/' + uikit,
+    'node_modules/uikit/dist/css/components/slidenav.min.css',
+    'node_modules/uikit/dist/css/components/slideshow.min.css',
+    'node_modules/uikit/dist/css/components/form-advanced.min.css',
+    'node_modules/uikit/dist/css/components/sticky.min.css',
+    'node_modules/font-awesome/css/font-awesome.min.css'
+  ], 'public/css/all.css')
+  .copy('node_modules/font-awesome/fonts', 'public/fonts')
+  .version();
 ```
 
-### resources/assets/sass/app.scss
-追加のcomponentを使うならapp.scssでimport。
-```sass
-@import "node_modules/uikit/dist/scss/uikit-mixins";
-@import "node_modules/uikit/dist/scss/components/form-advanced";
+### resources/assets/js/app.js
+componentのjsはapp.jsでインポート。
+
+```
+import 'uikit/dist/js/components/slideshow';
+import 'uikit/dist/js/components/lightbox';
+import 'uikit/dist/js/components/sticky';
 ```
 
 ### Pagination

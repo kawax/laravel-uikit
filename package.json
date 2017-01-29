@@ -1,18 +1,17 @@
 {
   "private": true,
   "scripts": {
-    "prod": "gulp --production",
-    "dev": "gulp watch",
-    "ide-helper:meta": "php artisan ide-helper:meta",
-    "ide-helper:generate": "php artisan ide-helper:generate",
-    "ide-helper:models": "php artisan ide-helper:models -N"
+    "webpack": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "dev": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hmr": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {
-    "font-awesome": "^4.6.3",
-    "gulp": "^3.9.1",
+    "axios": "^0.15.2",
     "jquery": "^3.1.0",
-    "laravel-elixir": "^6.0.0-10",
-    "laravel-elixir-webpack-official": "^1.0.2",
-    "uikit": "^2.26.4"
+    "laravel-mix": "^0.5.0",
+    "lodash": "^4.16.2",
+    "uikit": "^2.27.2",
+    "font-awesome": "^4.7.0"
   }
 }

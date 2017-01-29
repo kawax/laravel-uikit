@@ -7,8 +7,8 @@
 
   <title>Laravel</title>
 
-  <link href="{{ asset('css/uikit.min.css') }}" rel="stylesheet">
-  <link href="{{ elixir('css/app.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/all.css') }}" rel="stylesheet">
+  <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
 </head>
 <body>
@@ -71,9 +71,7 @@
 
 <!-- JavaScripts -->
 
-<script src="{{ asset('js/jquery.min.js') }}"></script>
-<script src="{{ asset('js/uikit.min.js') }}"></script>
-<script src="{{ elixir('js/app.js') }}"></script>
+<script src="{{ mix('js/app.js') }}"></script>
 
 </body>
 </html>
