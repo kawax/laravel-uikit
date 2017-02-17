@@ -9,7 +9,7 @@
   "devDependencies": {
     "axios": "^0.15.2",
     "jquery": "^3.1.0",
-    "laravel-mix": "^0.5.0",
+    "laravel-mix": "^0.8.1",
     "lodash": "^4.16.2",
     "uikit": "^2.27.2",
     "font-awesome": "^4.7.0"

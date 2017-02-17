@@ -27,7 +27,7 @@ uikitとfont-awesome追加。jqueryも必要。
   "devDependencies": {
     "axios": "^0.15.2",
     "jquery": "^3.1.0",
-    "laravel-mix": "^0.5.0",
+    "laravel-mix": "^0.8.1",
     "lodash": "^4.16.2",
     "uikit": "^2.27.2",
     "font-awesome": "^4.7.0"
@@ -72,13 +72,14 @@ mix.js('resources/assets/js/app.js', 'public/js')
   .version();
 ```
 
-### resources/assets/js/app.js
-componentのjsはapp.jsでインポート。
+### resources/assets/js/bootstrap.js
+componentのjsはbootstrap.jsでインポート。
 
 ```
-import 'uikit/dist/js/components/slideshow';
-import 'uikit/dist/js/components/lightbox';
-import 'uikit/dist/js/components/sticky';
+window.UIKit = require('uikit');
+require('uikit/dist/js/components/slideshow');
+require('uikit/dist/js/components/lightbox');
+require('uikit/dist/js/components/sticky');
 ```
 
 ### Pagination
