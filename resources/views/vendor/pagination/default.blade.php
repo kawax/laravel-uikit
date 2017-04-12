@@ -1,10 +1,18 @@
 @if ($paginator->hasPages())
-    <ul class="uk-pagination">
+    <ul class="uk-pagination uk-flex-center" uk-margin>
         {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())
-            <li class="uk-disabled"><span>&laquo;</span></li>
+            <li class="uk-disabled">
+                <a href="#">
+                    <span uk-pagination-previous></span>
+                </a>
+            </li>
         @else
-            <li><a href="{{ $paginator->previousPageUrl() }}" rel="prev">&laquo;</a></li>
+            <li>
+                <a href="{{ $paginator->previousPageUrl() }}" rel="prev">
+                    <span uk-pagination-previous></span>
+                </a>
+            </li>
         @endif
 
         {{-- Pagination Elements --}}
@@ -28,9 +36,13 @@
 
         {{-- Next Page Link --}}
         @if ($paginator->hasMorePages())
-            <li><a href="{{ $paginator->nextPageUrl() }}" rel="next">&raquo;</a></li>
+            <li><a href="{{ $paginator->nextPageUrl() }}" rel="next"><span uk-pagination-next></span></a></li>
         @else
-            <li class="uk-disabled"><span>&raquo;</span></li>
+            <li class="uk-disabled">
+                <a href="#">
+                    <span uk-pagination-next></span>
+                </a>
+            </li>
         @endif
     </ul>
 @endif

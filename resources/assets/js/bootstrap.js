@@ -1,5 +1,5 @@
 
-window._ = require('lodash');
+// window._ = require('lodash');
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -9,11 +9,13 @@ window._ = require('lodash');
 
 window.$ = window.jQuery = require('jquery');
 
+import UIkit from 'uikit';
+import Icons from 'uikit/dist/js/uikit-icons';
 
-window.UIKit = require('uikit');
-require('uikit/dist/js/components/slideshow');
-require('uikit/dist/js/components/lightbox');
-require('uikit/dist/js/components/sticky');
+// loads the Icon plugin
+UIkit.use(Icons);
+
+// require('bootstrap-sass');
 
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
@@ -29,11 +31,10 @@ require('uikit/dist/js/components/sticky');
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = require('axios');
+// window.axios = require('axios');
 
-window.axios.defaults.headers.common = {
-    'X-Requested-With': 'XMLHttpRequest'
-};
+// window.axios.defaults.headers.common['X-CSRF-TOKEN'] = window.Laravel.csrfToken;
+// window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
@@ -41,7 +42,9 @@ window.axios.defaults.headers.common = {
  * allows your team to easily build robust real-time web applications.
  */
 
-// import Echo from "laravel-echo"
+// import Echo from 'laravel-echo'
+
+// window.Pusher = require('pusher-js');
 
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
