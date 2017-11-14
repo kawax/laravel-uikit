@@ -57,3 +57,7 @@ https://getuikit.com/docs/sass
 
 @import "~uikit/src/scss/uikit-theme.scss";
 ```
+
+## Preset
+I found preset for UIkit3  
+https://github.com/laravel-frontend-presets/uikit3
