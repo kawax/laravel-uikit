@@ -61,3 +61,28 @@ https://getuikit.com/docs/sass
 ## Preset
 I found preset for UIkit3  
 https://github.com/laravel-frontend-presets/uikit3
+
+Pagination files.
+https://github.com/kawax/laravel-uikit/tree/master/resources/views/vendor/pagination
+
+### Laravel 5.6
+AppServiceProvider@boot
+
+```php
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Pagination\Paginator;
+
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        Paginator::defaultView('vendor.pagination.default');
+    }
+```
