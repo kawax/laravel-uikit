@@ -6,7 +6,10 @@ Just a template for me.
 
 ![uikit.png](uikit.png)
 
-
+## Laravel8
+After Laravel8, you can use `laravel/fortify` standalone and custom views.  
+- https://github.com/kawax/fortify-uikit
+- https://github.com/kawax/laravel-pagination-uikit
 
 ## Version
 - Laravel 5.5
@@ -89,6 +92,3 @@ class AppServiceProvider extends ServiceProvider
     }
 ```
 
-## Larael8
-After Laravel8, you can use `laravel/fortify` standalone and custom views.  
-https://github.com/kawax/fortify-uikit
