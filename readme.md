@@ -6,6 +6,8 @@ Just a template for me.
 
 ![uikit.png](uikit.png)
 
+
+
 ## Version
 - Laravel 5.5
 - UIkit 3.0.0-beta
@@ -86,3 +88,7 @@ class AppServiceProvider extends ServiceProvider
         Paginator::defaultView('vendor.pagination.default');
     }
 ```
+
+## Larael8
+After Laravel8, you can use `laravel/fortify` standalone and custom views.
+https://github.com/kawax/fortify-uikit
