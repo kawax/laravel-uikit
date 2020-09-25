@@ -17,7 +17,7 @@
             <label for="email" class="uk-form-label">E-Mail Address</label>
 
             <div class="uk-form-controls">
-              <input id="email" type="email" name="email" value="{{ $email or old('email') }}"
+              <input id="email" type="email" name="email" value="{{ $email ?? old('email') }}"
                      class="uk-input uk-form-width-large{{ $errors->has('email') ? ' uk-form-danger' : '' }}">
 
               @if ($errors->has('email'))
