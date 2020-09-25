@@ -64,8 +64,8 @@ https://getuikit.com/docs/sass
 I found preset for UIkit3  
 https://github.com/laravel-frontend-presets/uikit3
 
-Pagination files.
-https://github.com/kawax/laravel-uikit/tree/master/resources/views/vendor/pagination
+Pagination files.  
+https://github.com/kawax/laravel-pagination-uikit
 
 ### Laravel 5.6
 AppServiceProvider@boot
@@ -90,5 +90,5 @@ class AppServiceProvider extends ServiceProvider
 ```
 
 ## Larael8
-After Laravel8, you can use `laravel/fortify` standalone and custom views.
+After Laravel8, you can use `laravel/fortify` standalone and custom views.  
 https://github.com/kawax/fortify-uikit
